@@ -39,17 +39,38 @@ Figure 02  Encoder 8 * 3
 /* write all the steps invloved */
 
 **PROGRAM**
+//shift register_SISO
+module shift_reg10 (clk, sin, q);
+input clk;
+input sin;
+output reg [3:0] q;
+always (posedge clk)  
+begin
+q[0] <= sin;
+q[1] <= q[0];
+q[2] <= q[1];
+q[3] <= q[2];
+end
+endmodule
 
 /* Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
 
-Developed by: RegisterNumber:
+Developed by:sheril p RegisterNumber:25012800
 */
 
 **RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling**
 
+<img width="1002" height="427" alt="image" src="https://github.com/user-attachments/assets/6fbb89ac-a232-4905-bb57-125e8df11ff7" />
+
+
 **TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling**
 
+<img width="1210" height="103" alt="image" src="https://github.com/user-attachments/assets/6f09b3e5-e4aa-44ab-9a71-f09ceb344f6a" />
+
+
 **RESULTS**
+
+ implemented SISO Shift Register using verilog and validating their functionality using their functional tables verified
 
 
 
