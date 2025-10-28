@@ -36,39 +36,40 @@ Figure 02  Encoder 8 * 3
 
 **Procedure**
 
-/* write all the steps invloved */
+1.	Type the program in Quartus software.
+2.	Compile and run the program.
+3.	Generate the RTL schematic and save the logic diagram.
+4.	Create nodes for inputs and outputs to generate the timing diagram.
+5.	For different input combinations generate the timing diagram.
+
 
 **PROGRAM**
-//shift register_SISO
-module shift_reg10 (clk, sin, q);
-input clk;
-input sin;
-output reg [3:0] q;
-always (posedge clk)  
-begin
-q[0] <= sin;
-q[1] <= q[0];
-q[2] <= q[1];
-q[3] <= q[2];
-end
+module encoder_top(din, a, b, c); 
+input [0:7] din; 
+output a,b,c; 
+assign a=din[4] | din[5] | din[6] | din[7]; 
+assign b=din[2] | din[3] | din[6] | din[7];
+assign c=din[2] | din[4] | din[6] | din[7];
 endmodule
-
-/* Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
 
 Developed by:sheril p RegisterNumber:25012800
 */
 
 **RTL LOGIC FOR Encoder 8 To 3 in Dataflow Modelling**
 
-<img width="1002" height="427" alt="image" src="https://github.com/user-attachments/assets/6fbb89ac-a232-4905-bb57-125e8df11ff7" />
+
+<img width="597" height="481" alt="image" src="https://github.com/user-attachments/assets/19eaaf14-144c-4332-b920-58bb5375fad0" />
 
 
 **TIMING DIGRAMS FOR Encoder 8 To 3 in Dataflow Modelling**
 
-<img width="1210" height="103" alt="image" src="https://github.com/user-attachments/assets/6f09b3e5-e4aa-44ab-9a71-f09ceb344f6a" />
+
+<img width="1035" height="582" alt="image" src="https://github.com/user-attachments/assets/df258757-934b-41e8-a848-dcf66aaa7c9e" />
+
 
 
 **RESULTS**
+Therefore the code has been successfully executed.
 
  implemented SISO Shift Register using verilog and validating their functionality using their functional tables verified
 
